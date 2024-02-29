@@ -1,0 +1,32 @@
+﻿<Window x:Class="WpfAdminPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAdminPanel"
+        xmlns:svgc="http://sharpvectors.codeplex.com/svgc/"
+        mc:Ignorable="d"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        Background="Transparent"
+        MouseLeftButtonDown="Window_MouseLeftButtonDown"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Title="Панель Управления" Height="400" Width="300" x:Name="MyWindow">
+
+    <Border CornerRadius="20" Background="#2E2E2E">
+        <Grid>
+            <Border CornerRadius="20, 20, 0, 0" Background="#1C1C1C" Height="30" Width="Auto" VerticalAlignment="top"/>
+            <Label x:Name="l1" Foreground="#FFF" Content="Панель Управления" Margin="10, 0, 0, 0"/>
+            <Grid Height="30" VerticalAlignment="Top">
+                <Button Style="{DynamicResource BtnNav}" Margin="0, 0, 30, 0" Background="#0000" BorderBrush="#0000" Width="15" Height="15" Click="Button_folding_Click" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <svgc:SvgViewbox Margin="0, 10, 0, 0" VerticalAlignment="Center" HorizontalAlignment="Right" Source="pack://application:,,,/Resurces/Images/folding.svg"/>
+                </Button>
+                <Button Style="{DynamicResource BtnNav}" Margin="0, 0, 10, 0" Background="#0000" BorderBrush="#0000" Width="15" Height="15" Click="Button_Click" VerticalAlignment="Center" HorizontalAlignment="Right">
+                    <svgc:SvgViewbox VerticalAlignment="Center" HorizontalAlignment="Right" Source="pack://application:,,,/Resurces/Images/Exit.svg"/>
+                </Button>
+            </Grid>
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Source="Page/LoginPage.xaml" Margin="0,30,0,0"/>
+        </Grid>
+    </Border>
+</Window>
